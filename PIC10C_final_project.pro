@@ -25,7 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+    missile.cpp
 
 HEADERS += \
-        mainwindow.h
+    missile.h
