@@ -8,4 +8,7 @@ Missile::Missile()
     
     //connect
     QTimer *timer = new QTimer();
+    connect(timer, SIGNAL(timeout()),this, SLOT(move()));   //every timeout, the move function is called
+    
+    timer->start(50);       //every 50milleseconds, missile will move
 }

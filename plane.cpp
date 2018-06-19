@@ -20,6 +20,7 @@ void Plane::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Space){
         Missile *missile = new Missile();
+        missile->setPos(x(),y());
         scene()->addItem(missile);
     }
 }
