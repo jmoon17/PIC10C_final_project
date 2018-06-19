@@ -1,9 +1,14 @@
 #include "target.h"
 #include <QTimer>
 #include <QGraphicsScene>
+#include <stdlib.h>
 
 Target::Target()
 {
+    //set random position of target
+    int randNum = rand()%700;
+    setPos(randNum, 0);
+
     //same size as plane
     setRect(0,0,100,100);
 
