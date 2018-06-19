@@ -3,11 +3,15 @@
 
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
+#include <QObject>
 
-class Plane: public QGraphicsRectItem {
+class Plane: public QObject, public QGraphicsRectItem {
+    Q_OBJECT
 public:
     //Plane();
     void keyPressEvent(QKeyEvent *event);
+public slots:
+    void generate();
 
 };
 

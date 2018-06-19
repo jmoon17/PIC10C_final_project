@@ -2,6 +2,7 @@
 #include <QGraphicsScene>
 #include "plane.h"
 #include <QGraphicsView>
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -30,6 +31,10 @@ int main(int argc, char *argv[])
     //initial position of plane
     plane->setPos(view->width()/2,view->height() - plane->rect().height());
 
+    //generate target
+    QTimer *timer = new QTimer();
+    QObject::connect(timer,SIGNAL(timeout()),plane,SLOT(generate()));
+    timer->start(2500);
 
 
     return a.exec();

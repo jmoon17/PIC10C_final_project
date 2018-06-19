@@ -2,6 +2,7 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include "missile.h"
+#include "target.h"
 
 
 void Plane::keyPressEvent(QKeyEvent *event)
@@ -20,4 +21,12 @@ void Plane::keyPressEvent(QKeyEvent *event)
         missile->setPos(x(),y());
         scene()->addItem(missile);
     }
+}
+
+void Plane::generate()
+{
+    //create target
+    Target *target = new Target();
+    scene()->addItem(target);       //add target in the scene
+
 }
