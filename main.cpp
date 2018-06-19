@@ -18,6 +18,11 @@ int main(int argc, char *argv[])
     plane->setFocus();
 
     QGraphicsView *view = new QGraphicsView(scene);
+
+    //forbid the scroll bar
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     view->show();   //display the rectangle(plane)
 
 
