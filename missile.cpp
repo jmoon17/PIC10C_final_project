@@ -17,4 +17,8 @@ void Missile::move()
 {
     //move missile upwards
     setPos(x(),y()-10);
+    if(pos().y() < 0){
+        scene()->removeItem(this);
+        delete this;
+    }
 }
