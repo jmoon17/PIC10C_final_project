@@ -24,6 +24,8 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
     view->show();   //display the rectangle(plane)
+    view->setFixedSize(900,700);
+    scene->setSceneRect(0,0,900,700);      //set scene same size as the view
 
 
 
