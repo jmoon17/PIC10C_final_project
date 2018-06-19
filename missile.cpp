@@ -1,6 +1,8 @@
 #include "missile.h"
 #include <QTimer>
 #include <QGraphicsScene>
+#include <QList>
+#include "target.h"
 
 Missile::Missile()
 {
@@ -16,6 +18,20 @@ Missile::Missile()
 
 void Missile::move()
 {
+    //if missile hits the target, destroy both
+    QList<QGraphicsItem *> hit = collidingItems();
+    for(int i=0; i <hit.size(); i++)
+    {
+        if(typeid(*(hit[i])) == typeid(Target)){
+            scene()->removeItem(hit[i]);    //remove the target first
+            scene()->removeItem(this);      //then remove missile
+
+            //delete address of both items
+            delete hit[i];
+            delete this[i];
+        }
+    }
+
     //move missile upwards
     setPos(x(),y()-10);
     if(pos().y()+rect().height() < 0){
