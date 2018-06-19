@@ -1,7 +1,6 @@
 #include "missile.h"
 #include <QTimer>
-
-#include <QDebug>
+#include <QGraphicsScene>
 
 Missile::Missile()
 {
@@ -19,9 +18,8 @@ void Missile::move()
 {
     //move missile upwards
     setPos(x(),y()-10);
-    if(pos().y() < 0){
+    if(pos().y()+rect().height() < 0){
         scene()->removeItem(this);
         delete this;
-        qDebug() << "missile deleted";
     }
 }
