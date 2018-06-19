@@ -32,10 +32,10 @@ void Missile::move()
         }
     }
 
-    //move missile upwards
-    setPos(x(),y()-10);
-    if(pos().y()+rect().height() < 0){
-        scene()->removeItem(this);
-        delete this;
-    }
+//    //move missile upwards
+//    setPos(x(),y()-10);
+//    if(pos().y()+rect().height() < 0){
+//        scene()->removeItem(this);
+//        delete this;
+//    }
 }
