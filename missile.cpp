@@ -28,14 +28,15 @@ void Missile::move()
 
             //delete address of both items
             delete hit[i];
-            delete this[i];
+            delete this;
+            return;
         }
     }
 
-//    //move missile upwards
-//    setPos(x(),y()-10);
-//    if(pos().y()+rect().height() < 0){
-//        scene()->removeItem(this);
-//        delete this;
-//    }
+    //move missile upwards
+    setPos(x(),y()-10);
+    if(pos().y()+rect().height() < 0){
+        scene()->removeItem(this);
+        delete this;
+    }
 }
