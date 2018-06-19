@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include "Plane.h"
+#include "plane.h"
 #include <QGraphicsView>
 
 int main(int argc, char *argv[])

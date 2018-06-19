@@ -1,5 +1,8 @@
-#include "Plane.h"
+#include "plane.h"
 #include <QKeyEvent>
+#include <QGraphicsScene>
+#include "missile.h"
+
 
 void Plane::keyPressEvent(QKeyEvent *event)
 {
@@ -14,5 +17,9 @@ void Plane::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_Down){
         setPos(x(),y()+10);
+    }
+    else if(event->key() == Qt::Key_Space){
+        Missile *missile = new Missile();
+        scene()->addItem(missile);
     }
 }
