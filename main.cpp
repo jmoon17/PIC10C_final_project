@@ -1,6 +1,6 @@
 #include <QApplication>
 #include <QGraphicsScene>
-#include <QGraphicsRectItem>
+#include "Plane.h"
 #include <QGraphicsView>
 
 int main(int argc, char *argv[])
@@ -9,10 +9,13 @@ int main(int argc, char *argv[])
 
     QGraphicsScene *scene = new QGraphicsScene();
 
-    QGraphicsRectItem *plane = new QGraphicsRectItem;
+    Plane *plane = new Plane();
     plane->setRect(0,0,100,100);    //set the rectangle with width and length of 100
 
     scene->addItem(plane);
+
+    plane->setFlag(QGraphicsItem::ItemIsFocusable);
+    plane->setFocus();
 
     QGraphicsView *view = new QGraphicsView(scene);
     view->show();   //display the rectangle(plane)
