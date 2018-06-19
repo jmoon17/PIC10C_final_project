@@ -27,6 +27,9 @@ int main(int argc, char *argv[])
     view->setFixedSize(900,700);
     scene->setSceneRect(0,0,900,700);      //set scene same size as the view
 
+    //initial position of plane
+    plane->setPos(view->width()/2,view->height() - plane->rect().height());
+
 
 
     return a.exec();
