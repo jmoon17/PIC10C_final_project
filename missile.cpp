@@ -9,10 +9,13 @@
 
 extern RetroShooter *retroShooter; //make retroShooter as Global object
 
-Missile::Missile(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent)
+Missile::Missile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
     //draw the missile
-    setRect(0,0,15,50);
+    //setRect(0,0,15,50);
+
+    //draw graphics
+    setPixmap(QPixmap(":/images/missile.png"));
 
     //connect
     QTimer *timer = new QTimer(this);
@@ -42,7 +45,7 @@ void Missile::move()
     //move missile upwards
     setPos(x(),y()-10);
     //destroy missile if it goes out of the screen
-    if(pos().y()+rect().height() < 0){
+    if(pos().y()< 0){
         scene()->removeItem(this);
         delete this;
     }

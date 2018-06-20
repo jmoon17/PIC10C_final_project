@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "retro_shooter.h"
 #include <QList>
+#include "health.h"
 
 
 extern RetroShooter *retroShooter; //make retroShooter as Global object
