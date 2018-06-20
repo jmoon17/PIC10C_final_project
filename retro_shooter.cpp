@@ -5,6 +5,7 @@
 #include "target.h"
 #include <QGraphicsTextItem>
 #include <QFont>
+#include <QImage>
 
 
 RetroShooter::RetroShooter(QWidget *parent)
@@ -12,8 +13,9 @@ RetroShooter::RetroShooter(QWidget *parent)
     //create scene
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,900, 700);  //make the scene 900x700
-    setScene(scene);
+    setBackgroundBrush(QBrush(QImage(":/images/bg_1_1.png")));
 
+    setScene(scene);
     //forbid the scroll bar
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
