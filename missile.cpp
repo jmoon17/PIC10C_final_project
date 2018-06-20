@@ -15,7 +15,7 @@ Missile::Missile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
     //setRect(0,0,15,50);
 
     //draw graphics
-    setPixmap(QPixmap(":/images/missile.png"));
+    setPixmap(QPixmap(":/images/missile.jpg"));
 
     //connect
     QTimer *timer = new QTimer(this);
