@@ -3,11 +3,12 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
+#include <QGraphicsItem>
 
 class Target: public QObject, public QGraphicsRectItem{
     Q_OBJECT //macro that handles signal
 public:
-    Target();
+    Target(QGraphicsItem *parent = 0);
 public slots:
     void move();
 

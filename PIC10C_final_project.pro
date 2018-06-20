@@ -28,11 +28,14 @@ SOURCES += \
     missile.cpp \
     plane.cpp \
     target.cpp \
-    retro_shooter.cpp
+    retro_shooter.cpp \
+    score.cpp \
+    health.cpp
 
 HEADERS += \
     missile.h \
     plane.h \
     target.h \
     retro_shooter.h \
-    health.h
+    health.h \
+    score.h

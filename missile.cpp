@@ -3,14 +3,19 @@
 #include <QGraphicsScene>
 #include <QList>
 #include "target.h"
+#include "retro_shooter.h"
+#include <QGraphicsItem>
 
-Missile::Missile()
+
+extern RetroShooter *retroShooter; //make retroShooter as Global object
+
+Missile::Missile(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent)
 {
     //draw the missile
     setRect(0,0,15,50);
 
     //connect
-    QTimer *timer = new QTimer();
+    QTimer *timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()),this, SLOT(move()));   //every timeout, the move function is called
 
     timer->start(50);       //every 50milleseconds, missile will move
@@ -19,15 +24,16 @@ Missile::Missile()
 void Missile::move()
 {
     //if missile hits the target, destroy both
-    QList<QGraphicsItem *> hit = collidingItems();
-    for(int i=0; i <hit.size(); i++)
+    QList<QGraphicsItem *> hitItems = collidingItems();
+    for(int i=0; i <hitItems.size(); i++)
     {
-        if(typeid(*(hit[i])) == typeid(Target)){
-            scene()->removeItem(hit[i]);    //remove the target first
+        if(typeid(*(hitItems[i])) == typeid(Target)){
+            retroShooter->score->addScore();
+            scene()->removeItem(hitItems[i]);    //remove the target first
             scene()->removeItem(this);      //then remove missile
 
-            //delete address of both items
-            delete hit[i];
+            //delete both items from heap
+            delete hitItems[i];
             delete this;
             return;
         }
@@ -35,6 +41,7 @@ void Missile::move()
 
     //move missile upwards
     setPos(x(),y()-10);
+    //destroy missile if it goes out of the screen
     if(pos().y()+rect().height() < 0){
         scene()->removeItem(this);
         delete this;

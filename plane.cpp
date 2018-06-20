@@ -4,6 +4,9 @@
 #include "missile.h"
 #include "target.h"
 
+Plane::Plane(QGraphicsItem *parent): QGraphicsRectItem(parent){
+
+}
 
 void Plane::keyPressEvent(QKeyEvent *event)
 {

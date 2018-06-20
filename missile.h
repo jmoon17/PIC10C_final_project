@@ -3,11 +3,12 @@
 
 #include <QGraphicsRectItem>
 #include <QObject>
+#include <QGraphicsItem>
 
 class Missile: public QObject, public QGraphicsRectItem{
     Q_OBJECT //macro that handles signal
 public:
-    Missile();
+    Missile(QGraphicsItem * parent=0);
 public slots:
     void move();
 
