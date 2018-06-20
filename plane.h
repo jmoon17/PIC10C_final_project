@@ -1,12 +1,12 @@
 #ifndef PLANE_H
 #define PLANE_H
 
-#include <QGraphicsRectItem>
+#include <QGraphicsPixmapItem>
 #include <QKeyEvent>
 #include <QObject>
 #include <QGraphicsItem>
 
-class Plane: public QObject, public QGraphicsRectItem {
+class Plane: public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
 public:
     Plane(QGraphicsItem *parent =0);

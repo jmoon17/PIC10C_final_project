@@ -4,8 +4,10 @@
 #include "missile.h"
 #include "target.h"
 
-Plane::Plane(QGraphicsItem *parent): QGraphicsRectItem(parent){
+Plane::Plane(QGraphicsItem *parent): QGraphicsPixmapItem(parent){
 
+    //set graphics of plane
+    setPixmap(QPixmap(":/images/plane.jpg"));
 }
 
 void Plane::keyPressEvent(QKeyEvent *event)

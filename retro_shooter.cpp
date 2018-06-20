@@ -21,7 +21,7 @@ RetroShooter::RetroShooter(QWidget *parent)
 
     //create a new plane for player
     plane = new Plane();
-    plane->setRect(0,0,100,100);    //set the rectangle with width and length of 100
+    //plane->setRect(0,0,100,100);    //set the rectangle with width and length of 100
     //set initial position of plane
     plane->setPos(500,600);
 
