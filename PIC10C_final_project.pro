@@ -39,3 +39,6 @@ HEADERS += \
     retro_shooter.h \
     health.h \
     score.h
+
+RESOURCES += \
+    res.qrc
