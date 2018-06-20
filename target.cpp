@@ -9,14 +9,17 @@
 
 extern RetroShooter *retroShooter; //make retroShooter as Global object
 
-Target::Target(QGraphicsItem *parent): QObject(), QGraphicsRectItem(parent)
+Target::Target(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
     //set random position of target
     int randNum = rand()%700;
     setPos(randNum, 0);
 
     //same size as plane
-    setRect(0,0,100,100);
+    //setRect(0,0,100,100);
+
+    //draw graphic of target
+    setPixmap(QPixmap(":/images/target.png"));
 
     //connect
     QTimer *timer = new QTimer(this);
